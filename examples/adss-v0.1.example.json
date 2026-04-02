@@ -1,0 +1,42 @@
+{
+    "system_id": "8db18d87-d63f-4ebc-95fd-f5b5d12db1b5",
+    "schema_version": "0.1.0",
+    "created_at": "2026-04-02T18:00:00Z",
+    "name": "Retention Flow",
+    "objective": {
+      "title": "Reduce member attrition"
+    },
+    "agents": [
+      {
+        "agent_id": "0d3527dc-148d-4a18-b9e4-e2759cc0f9ac",
+        "name": "Retention Agent",
+        "role": "Evaluates retention offers"
+      }
+    ],
+    "flows": [
+      {
+        "flow_id": "fe6b7bf6-c4aa-4eb6-b43d-dae24ff27840",
+        "name": "Flow 1",
+        "entry_node_id": "node-1",
+        "nodes": [
+          {
+            "node_id": "node-1",
+            "node_type": "decision",
+            "name": "Offer Decision",
+            "sis_ref": {
+              "intent_type": "offer_decision",
+              "schema_version": "0.2.0"
+            }
+          }
+        ],
+        "transitions": [
+          {
+            "transition_id": "t1",
+            "from_node_id": "node-1",
+            "to_node_id": "node-1",
+            "condition_type": "always"
+          }
+        ]
+      }
+    ]
+  }
