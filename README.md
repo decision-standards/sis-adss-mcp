@@ -34,6 +34,11 @@ Together, this enables something that does not currently exist:
 
 ## What It Does
 
+Given a system:
+
+```json
+{ "flows": [...] }
+```
 The server can:
 	•	identify all decision points
 	•	map them to required decision contracts
