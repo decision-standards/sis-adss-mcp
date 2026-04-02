@@ -45,7 +45,7 @@ The server can:
 	•	explain how the system operates
 
 ⸻
-```markdown
+
 ## Example Output
 
 ```json
