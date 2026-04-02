@@ -36,7 +36,7 @@ Together, this enables something that does not currently exist:
 
 Given a system:
 ```json
-{ "flows": [...] }
+{ "flows": [...] }`
 
 The server can:
 	•	identify all decision points
