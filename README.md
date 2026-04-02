@@ -6,17 +6,16 @@ A reference server for validating, mapping, and explaining decision systems.
 
 ## The Problem
 
-Most AI systems fail for a reason no one is measuring.
+AI systems do not fail because decisions are wrong.
 
-It’s not the model.  
-It’s not the prompt.  
-
-It’s the system continuing in a state that should have stopped.
+They fail because the system continues in a state that should have stopped.
 
 You can validate a decision.  
 You can audit a decision.  
 
-But you cannot currently validate whether a system should still be running.
+But no current system can answer:
+
+**“Should this system still be running?”**
 
 ---
 
@@ -27,12 +26,9 @@ This server connects two layers:
 - **SIS (Standard Intent Specification)** → what a valid decision looks like  
 - **ADSS (Agentic Decision System Specification)** → how systems are structured  
 
-Together, this enables:
+Together, this enables something that does not currently exist:
 
-- validation of decision contracts  
-- mapping of decision points inside systems  
-- detection of structural gaps  
-- system-level explanation of behavior  
+→ system-level validation  
 
 ---
 
@@ -63,29 +59,36 @@ Example Output
       }
     ]
   },
-  "coherence_score": 1
+  "gaps": {
+    "decision_nodes_without_contracts": [
+      "Retention Trigger"
+    ]
+  },
+  "coherence_score": 0.62
 }
 
 
 ⸻
 
-Why This Matters
+## Why This Matters
 
 Current AI infrastructure focuses on:
-	•	model performance
-	•	policy enforcement
-	•	observability
+
+- model performance  
+- policy enforcement  
+- observability  
 
 None of these prevent failure.
 
 Because failure is not a bad decision.
 
-It is a system that should have stopped, but didn’t.
+It is a system continuing in an invalid state.
 
 This server introduces a missing layer:
 
-→ system-level validation and interpretation
-
+→ detection of invalid system continuation
+→ mapping of decisions to enforceable contracts
+→ explanation of system behavior as a whole
 ⸻
 
 Tools
