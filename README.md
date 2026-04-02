@@ -35,7 +35,6 @@ Together, this enables something that does not currently exist:
 ## What It Does
 
 Given a system:
-
 ```json
 { "flows": [...] }
 
@@ -47,8 +46,9 @@ The server can:
 
 ⸻
 
-Example Output
+## Example Output
 
+```json
 {
   "valid": true,
   "mapping": {
