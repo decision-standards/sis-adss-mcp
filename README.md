@@ -1,54 +1,121 @@
 # SIS + ADSS MCP Server
 
-Reference MCP server for the Standard Intent Specification (SIS) and Agentic Decision System Specification (ADSS).
+A reference server for validating, mapping, and explaining decision systems.
 
-## Purpose
+---
 
-This server exposes tools for:
+## The Problem
 
-- validating SIS payloads
-- validating ADSS systems
-- mapping ADSS decision points to SIS contracts
-- analyzing structural gaps in ADSS systems
-- generating human-readable explanations of systems and decisions
+Most AI systems fail for a reason no one is measuring.
 
-## Included Standards
+It’s not the model.  
+It’s not the prompt.  
 
-- **SIS** — decision contract standard
-- **ADSS** — system design standard for multi-agent workflows
+It’s the system continuing in a state that should have stopped.
 
-## Current Tools
+You can validate a decision.  
+You can audit a decision.  
 
-### SIS
-- `sis.get_schema`
-- `sis.validate_payload`
-- `sis.explain_decision`
+But you cannot currently validate whether a system should still be running.
 
-### ADSS
-- `adss.get_schema`
-- `adss.validate_system`
-- `adss.map_decision_points`
-- `adss.to_sis_map`
-- `adss.gap_analysis`
-- `adss.explain_system`
-- `adss.validate_and_map`
-- `adss.full_analysis`
+---
 
-### Utility
-- `ping`
+## What This Is
 
-## Local Development
+This server connects two layers:
 
-Install dependencies:
+- **SIS (Standard Intent Specification)** → what a valid decision looks like  
+- **ADSS (Agentic Decision System Specification)** → how systems are structured  
 
-```bash
+Together, this enables:
+
+- validation of decision contracts  
+- mapping of decision points inside systems  
+- detection of structural gaps  
+- system-level explanation of behavior  
+
+---
+
+## What It Does
+
+Given a system:
+
+```json
+{ "flows": [...] }
+
+The server can:
+	•	identify all decision points
+	•	map them to required decision contracts
+	•	detect missing or invalid bindings
+	•	explain how the system operates
+
+⸻
+
+Example Output
+
+{
+  "valid": true,
+  "mapping": {
+    "required_sis_contracts": [
+      {
+        "intent_type": "offer_decision",
+        "node_name": "Offer Decision"
+      }
+    ]
+  },
+  "coherence_score": 1
+}
+
+
+⸻
+
+Why This Matters
+
+Current AI infrastructure focuses on:
+	•	model performance
+	•	policy enforcement
+	•	observability
+
+None of these prevent failure.
+
+Because failure is not a bad decision.
+
+It is a system that should have stopped, but didn’t.
+
+This server introduces a missing layer:
+
+→ system-level validation and interpretation
+
+⸻
+
+Tools
+
+SIS
+	•	sis.get_schema
+	•	sis.validate_payload
+	•	sis.explain_decision
+
+ADSS
+	•	adss.get_schema
+	•	adss.validate_system
+	•	adss.map_decision_points
+	•	adss.to_sis_map
+	•	adss.gap_analysis
+	•	adss.explain_system
+	•	adss.validate_and_map
+	•	adss.full_analysis
+
+⸻
+
+Local Development
+
 npm install
-
-Run locally:
-
 npm run dev
 
-Project Structure
+
+⸻
+
+Structure
 
 src/
   index.ts
@@ -60,10 +127,14 @@ src/
 schemas/
 examples/
 
-Notes
 
-This is a reference standards server, not a production runtime control plane.
+⸻
 
-SIS defines decision contracts.
-ADSS defines system structure.
-This MCP server makes both standards accessible through a unified interface.
+Position
+
+This is not a framework.
+
+This is a reference implementation of:
+	•	a decision contract standard (SIS)
+	•	a system structure standard (ADSS)
+	•	a validation and interpretation layer connecting them
