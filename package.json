@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "smoke": "tsx src/smoke.ts",
     "test:full": "tsx src/test-full.ts",
     "test:sis": "tsx src/test-validate-sis.ts",
-    "test:adss": "tsx src/test-validate-map.ts",
-    "smoke": "tsx src/smoke.ts"
+    "test:adss": "tsx src/test-validate-map.ts"
   },
+    
   "keywords": [],
   "author": "",
   "license": "ISC",
