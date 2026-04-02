@@ -1,6 +1,6 @@
 # SIS + ADSS MCP Server
 
-A reference server for validating, mapping, and explaining decision systems.
+A reference server for validating, mapping, and explaining AI decision systems.
 
 ---
 
