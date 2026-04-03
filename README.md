@@ -16,7 +16,7 @@ npm run start
 MCP Manifest
 
 The repo includes a root mcp.json pointing to the compiled server entrypoint:
-
+```json
 {
   "name": "sis-adss-mcp",
   "description": "Reference server for validating and explaining AI decision systems using SIS and ADSS",
@@ -26,7 +26,7 @@ The repo includes a root mcp.json pointing to the compiled server entrypoint:
     "args": ["dist/index.js"]
   }
 }
-
+```
 ---
 
 ## The Problem
