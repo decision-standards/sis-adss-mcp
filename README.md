@@ -29,6 +29,15 @@ The repo includes a root mcp.json pointing to the compiled server entrypoint:
 ```
 ---
 
+## Who This Is For
+
+- teams building multi-agent systems
+- developers formalizing decision logic
+- organizations deploying autonomous workflows
+- architects who need to map systems to explicit decision contracts
+
+---
+
 ## The Problem
 
 AI systems do not fail because decisions are wrong.
