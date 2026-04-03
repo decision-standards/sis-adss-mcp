@@ -4,6 +4,31 @@ A reference server for validating, mapping, and explaining AI decision systems.
 
 ---
 
+## Quick Start
+
+```bash
+git clone https://github.com/decision-standards/sis-adss-mcp.git
+cd sis-adss-mcp
+npm install
+npm run build
+npm run start
+
+MCP Manifest
+
+The repo includes a root mcp.json pointing to the compiled server entrypoint:
+
+{
+  "name": "sis-adss-mcp",
+  "description": "Reference server for validating and explaining AI decision systems using SIS and ADSS",
+  "version": "0.1.0",
+  "server": {
+    "command": "node",
+    "args": ["dist/index.js"]
+  }
+}
+
+---
+
 ## The Problem
 
 AI systems do not fail because decisions are wrong.
