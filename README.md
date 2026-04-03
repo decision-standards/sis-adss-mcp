@@ -12,7 +12,7 @@ cd sis-adss-mcp
 npm install
 npm run build
 npm run start
-
+```
 MCP Manifest
 
 The repo includes a root mcp.json pointing to the compiled server entrypoint:
